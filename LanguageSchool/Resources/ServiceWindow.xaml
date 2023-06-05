@@ -1,0 +1,26 @@
+﻿<Window x:Class="LanguageSchool.Resources.ServiceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LanguageSchool.Resources"
+        mc:Ignorable="d"
+        Title="ServiceWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="1" x:Name="MyDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" 
+                  CanUserDeleteRows="False" CanUserResizeRows="False" 
+                  IsReadOnly="False" CellEditEnding="MyDataGrid_CellEditEnding">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ClientID" Binding="{Binding ClientID, UpdateSourceTrigger = PropertyChanged }" IsReadOnly="True"/>
+                <DataGridTextColumn Header="ServiceID" Binding="{Binding ServiceID}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime, UpdateSourceTrigger = PropertyChanged}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Comment" Binding="{Binding Comment, UpdateSourceTrigger = PropertyChanged}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+    </Grid>
+</Window>
